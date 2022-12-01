@@ -48,7 +48,11 @@ async def commands(ntx):
 # Return a type matchup
 @client.command()
 async def mon_type(ntx : str, type_1: str):
-    msg = types[type_1]
+    msg = ''
+    if type_1 in types:
+        msg = types[type_1]
+    else:
+        msg = 'That is not a valid Pokemon type try uppercase, the types are case sensitve'
     await ntx.send(msg)
 
 # Return a mon using its dex number
