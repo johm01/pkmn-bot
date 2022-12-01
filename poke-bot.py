@@ -21,6 +21,8 @@ types = {
     'Dark':'Dark is super effective against Ghost/Psychic, and weak against Bug/Fairy/Fighting',
     'Bug':'Bug is super effective against Grass/Dark/Psychic, and weak against Fire/Flying/Rock',
     'Electric':'Electric is super effective against Flying/Water, and weak against Ground',
+    'Psychic':'Psychic is super effective against Fighting/Poison, and weak against Bug/Dark/Ghost',
+    'Poison':'Poison is super effective against Fairy/Grass, and weak against Ground Psychic',
 }
 
 # Discord bot token
