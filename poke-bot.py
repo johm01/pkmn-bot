@@ -80,5 +80,12 @@ async def goat(ntx: str):
 @client.command()
 async def stats(ntx: str, stats: str):
     await ntx.send(pypokedex.get(name=stats).base_stats.hp)
+    
+# Pokemon type chart command 
+@client.command()
+async def chart(ntx: str):
+    img = 'https://cdn.discordapp.com/attachments/756538871126163496/1048133338453528626/460px-Pokemon_Type_Chart.svg.png'
+    await ntx.send(img)
+
 
 client.run(token)
