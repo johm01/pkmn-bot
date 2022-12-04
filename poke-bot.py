@@ -70,6 +70,8 @@ async def name(ntx: str, mon: str):
     await ntx.send(pypokedex.get(name=mon).sprites[0]['default'])
     await ntx.send(pypokedex.get(name=mon).sprites[0]['shiny'])
     await ntx.send('Abilites: '+str(pypokedex.get(name=mon).abilities[0][0])+' | '+str(pypokedex.get(name=mon).abilities[1][0]))
+    types = str(pypokedex.get(name=mon).types)
+    await ntx.send('Type: '+types)
 
 # Random Pokemon Command
 @client.command()
@@ -87,5 +89,16 @@ async def chart(ntx: str):
     img = 'https://cdn.discordapp.com/attachments/756538871126163496/1048133338453528626/460px-Pokemon_Type_Chart.svg.png'
     await ntx.send(img)
 
+# Check if a pokemon can learn a certain move
+@client.command()
+async def move_check(ntx: str,mon: str,mov: str):
+    m = pypokedex.get(name=mon)
+    n = [move.name for move in m.moves['sun-moon']]
+    msg = ''
+    if mov in n:
+        msg = 'True'
+    else:
+        msg = 'False'
+    await ntx.send(msg)
 
 client.run(token)
