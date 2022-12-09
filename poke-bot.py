@@ -79,11 +79,16 @@ async def random(ntx: str):
     num = random.randint(1,759)
     await ntx.send(pypokedex.get(dex=num).sprites[0]['default'])
     await ntx.send(pypokedex.get(dex=num).sprites[0]['shiny'])
+    await ntx.send(pypokedex.get(dex=num).name)
 
 # Pokemon stats command
 @client.command()
-async def stats(ntx: str, stats: str):
-    await ntx.send(pypokedex.get(name=stats).base_stats.hp)
+async def stats(ntx: str, mon: str,stat: str):
+    stats = pypokedex.get(name=mon).base_stats
+    stats_list = {'hp':stats.hp,'attack':stats.attack,'defense':stats.defense,
+                'sp_atk':stats.sp_atk,'sp_def':stats.sp_def,'speed':stats.speed}
+                
+    await ntx.send(stats_list[stat])
     
 # Pokemon type chart command 
 @client.command()
