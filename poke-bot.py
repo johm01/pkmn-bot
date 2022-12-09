@@ -75,8 +75,10 @@ async def name(ntx: str, mon: str):
 
 # Random Pokemon Command
 @client.command()
-async def goat(ntx: str):
-        await ntx.send('SOSA')
+async def random(ntx: str):
+    num = random.randint(1,759)
+    await ntx.send(pypokedex.get(dex=num).sprites[0]['default'])
+    await ntx.send(pypokedex.get(dex=num).sprites[0]['shiny'])
 
 # Pokemon stats command
 @client.command()
