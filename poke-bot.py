@@ -96,6 +96,23 @@ async def chart(ntx: str):
     img = 'https://cdn.discordapp.com/attachments/756538871126163496/1048133338453528626/460px-Pokemon_Type_Chart.svg.png'
     await ntx.send(img)
 
+# Sandwhich recipe chart command
+@client.command()
+async def sandwhich(ntx: str):
+    msg = 'https://cdn.discordapp.com/attachments/756538871126163496/1049237143379247144/image.png'
+    await ntx.send(msg)
+
+@client.command()
+async def item(ntx: str,items: str):
+    msg = f'https://www.serebii.net/itemdex/{items}.shtml'
+    await ntx.send(msg)
+
+# Command to show a link for more info about a pokemon
+@client.command()
+async def page(ntx : str,link):
+    msg = f'https://www.serebii.net/pokedex-sv/{link}'
+    await ntx.send(msg)
+
 # Check if a pokemon can learn a certain move
 @client.command()
 async def move_check(ntx: str,mon: str,mov: str):
