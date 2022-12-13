@@ -26,7 +26,7 @@ types = {
 }
 
 # Discord bot token
-token = 'MTA0NzM0NDYzNjQ1MDA1NDE4NA.G6qC89.nBiHZVMHcyOvE3hfPrdZEOeaNi3maUnERAEsig'
+token = ''
 
 # Permissions for bot 
 intents = discord.Intents.default()
