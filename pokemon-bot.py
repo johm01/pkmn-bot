@@ -124,6 +124,14 @@ async def move_check(ntx: str,mon_1: str,moves: str):
     else:
         msg = 'False'
     await ntx.send(msg)
+    
+# Returns hidden ability for said pokemon
+@client.command()
+async def hidden(ntx: str, mon: str):
+    mon_1 = pypokedex.get(name=mon)
+    is_hidden = [ability.name for ability in mon_1.abilities if ability.is_hidden is True]
+    await ntx.send(is_hidden)
+
 
 client.run(token)
 
