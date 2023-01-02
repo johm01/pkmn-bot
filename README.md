@@ -4,4 +4,6 @@ Now bot is deployed on heroku
 
 
 
-![image](https://user-images.githubusercontent.com/97820338/210202272-fedb4f1f-7cb8-4800-bd07-4329fe5ba50f.png)
+
+
+<img width="162" alt="bot_2" src="https://user-images.githubusercontent.com/97820338/210202414-493abb66-1f8b-4835-96fc-57d00bc3876d.PNG">
