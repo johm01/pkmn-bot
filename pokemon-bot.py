@@ -131,6 +131,15 @@ async def hidden(ntx: str, mon: str):
     mon_1 = pypokedex.get(name=mon)
     is_hidden = [ability.name for ability in mon_1.abilities if ability.is_hidden is True]
     await ntx.send(is_hidden)
+    
+# Share Pokemon showdown teams 
+@client.command()
+async def share_team(ntx: str,team: str):
+    with open(f'{team}.txt') as f:
+        msg = ''.join(f)
+        await ntx.send("-----------------")
+        await ntx.send(msg)
+        await ntx.send("-----------------")
 
 
 client.run(token)
