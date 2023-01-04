@@ -135,7 +135,12 @@ async def hidden(ntx: str, mon: str):
 # Share Pokemon showdown teams 
 @client.command()
 async def share_team(ntx: str,team: str):
-    with open(f'{team}.txt') as f:
+    # Getting the users username to access the user dir
+    user = os.getlogin()
+    path = f'C:\\Users\{user}\Documents\My Games'
+    new_path = f'\Pokemon Showdown\Teams\{team}.txt'
+    # Opening the team
+    with open(path + new_path) as f:
         msg = ''.join(f)
         await ntx.send("-----------------")
         await ntx.send(msg)
